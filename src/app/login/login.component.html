@@ -1,0 +1,65 @@
+<div class="container-fluid" id="mainDiv">
+<app-header
+            [isUserLoggedIn]="false" title="OSI EMS"></app-header>
+
+<h1>{{ title }}</h1>
+ 
+	<div class="w3ls-login box box--big">
+		<!-- form starts here -->
+		<form [formGroup]="angForm" novalidate>
+			<div class="agile-field-txt form-group">
+				<label>
+					<i class="fa fa-user" aria-hidden="true"></i> Username :</label>
+				<input type="text" formControlName="name" placeholder=" "/>
+      </div>
+      <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['name'].errors.required">
+          Name is required.
+		</div>
+		
+    </div>
+			<div class="agile-field-txt form-group">
+				<label>
+					<i class="fa fa-envelope" aria-hidden="true"></i> password :</label>
+        <input [type]="showPass" formControlName="password" placeholder=" " id="myInput"  />
+        <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['password'].errors.required">
+            Password is required.
+		  </div>
+		  <div *ngIf="angForm.controls['password'].errors.pattern">
+				Password length should be more than 6.
+			  </div>
+      </div>
+				<div class="agile_label form-group">
+					<input id="check3" name="check3" type="checkbox" value="show password" (change)="showPassword($event.target.checked)">
+					<label class="check" for="check3">Show password</label>
+				</div>
+			</div>
+			<!---728x90 -->
+			
+			<div class="w3ls-bot">
+				<div class="switch-agileits">
+					<label class="switch">
+						<input type="checkbox">
+						<span class="slider round"></span>
+						keep me signed in
+					</label>
+				</div>
+				<div class="form-end form-group">
+					<input type="submit" value="LOGIN" [disabled]="angForm.pristine || angForm.invalid" (click)="onLoginClick()" >
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</form>
+	</div>
+
+	<!-- //form ends here -->
+	<!--copyright-->
+	<div class="copy-wthree">
+		<p>© 2018 OSI Consulting . All Rights Reserved 
+			<a href="http://www.osius.com/privacy-policy/" target="_blank">Privacy Policy</a>&nbsp; | &nbsp;<a href="http://www.osius.com/terms-of-use/ " target="_blank">Terms of Use</a>
+		</p>
+	</div>
+</div>
+
+<div><app-t></app-t></div>

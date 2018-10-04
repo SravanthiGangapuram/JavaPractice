@@ -1,0 +1,32 @@
+
+  <div *ngIf="employee">
+      <h1>Welcome Edit Employee  Page</h1><br>
+<div class="panel panel-primary">
+    
+    <div class="panel-heading">
+       Emp Id: {{ employee.empNo }}
+      </div>
+  <div class="panel-body">
+    <div class="form-group">
+                <form #editForm="ngForm" (ngSubmit)="onEdit(editForm)" noValidate>
+                    <div class="col-xs-2">
+                   <input type="text" class="form-control" name="empNo"  #empNo [(ngModel)] = "employee.empNo" readonly />
+                   </div>
+                   <div class="col-xs-2">
+                   <input type="text" class="form-control" name="userName" #userName [(ngModel)] = "employee.userName"/>
+                  </div>
+                   <div class="col-xs-2">
+                   <input   type="text" class="form-control" name="password" #password [(ngModel)] = "employee.password">
+                  </div>
+                   <div class="col-xs-3">
+                   <input  type="text" class="form-control" name="email" #email [(ngModel)] = "employee.email">
+                  </div>
+                   <div class="col-xs-3">
+                  <i class="glyphicon glyphicon-check pointer" title="Update Employee"></i>
+                  </div>
+                 </form>
+             </div>
+             
+ </div>
+ </div>
+ </div>

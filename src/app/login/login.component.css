@@ -1,0 +1,68 @@
+#mainDiv {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 100%;
+    background: url(./images/banner.jpg);
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+}
+h1 {
+    font-size: 2.2em;
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #00BCD4;
+    text-shadow: 1px 1px 1px #000;
+    letter-spacing: 1px;
+    margin: 1.2em 1vw .9em;
+    text-align: center;
+    font-family: 'Niconne', cursive;
+}
+/*--responsive--*/
+@media(max-width:1920px) {
+    h1 {
+        font-size: 3.5vw;
+    }
+}
+@media(max-width:1024px) {
+    h1 {
+        font-size: 4.5vw;
+    }
+}
+
+@media(max-width:800px) {
+    h1 {
+        font-size: 5vw;
+    }
+}
+
+@media(max-width:480px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    .w3ls-login form {
+        padding: 7.5vw;
+    }
+}
+
+@media(max-width:440px) {
+    h1 {
+        font-size: 2.3em;
+    }
+    .parent {
+        display: block;
+    }
+}
+
+@media(max-width:320px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    .w3ls-login form {
+        padding: 25px 8px;
+    }
+}
+/*--//responsive--*/

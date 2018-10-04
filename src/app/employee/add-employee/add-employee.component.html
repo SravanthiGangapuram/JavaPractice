@@ -1,0 +1,28 @@
+
+
+
+
+<div class="container">
+        <h1> Add Employee Page</h1>
+        <br>
+        <div class="panel panel-primary">
+                <div class="panel-heading"> Add Employee</div>
+                <div class="panel-body">
+    <form class="form-horizontal" #addForm="ngForm" (ngSubmit)="submitAddForm(addForm)" noValidate>
+        <!--   <div class="form-group"> <input name="empNo" ngModel required #empNo="ngModel"></div> -->
+        <div class="form-group">
+            <label class="col-md-4">Username: </label> <input name="userName" class="form-control" ngModel required #userName="ngModel">
+        </div>
+        <div class="form-group">
+            <label class="col-md-4"> Password: </label> <input type="password" class="form-control" name="password" ngModel>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4">  Email:</label>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input name="email" class="form-control" ngModel required #email="ngModel">
+        </div>
+        <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-add-submit">Add Employee</button>
+    </div>
+    </form>
+</div>
+</div>
+</div>

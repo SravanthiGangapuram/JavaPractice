@@ -1,0 +1,17 @@
+.selected {
+    background-color: #CFD8DC !important;
+    color: white;
+}
+
+/* td:nth-child(1),
+td:nth-child(2),
+td:nth-child(3) {
+    color: blue;
+    // width: 5px;
+}
+
+td:nth-last-child(1),
+td:nth-last-child(2) {
+    background: orange;
+    width: 10px;
+} */

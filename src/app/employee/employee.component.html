@@ -1,0 +1,41 @@
+<app-header
+            [isUserLoggedIn]="true" title="OSI EMS"></app-header>
+<div class="container">
+        <h1> Hi Welcome Employee Component</h1>
+        <br>
+        <div class="panel panel-primary">
+    <div class="panel-heading">Employee Details</div>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th scope="row">Emp No</th>
+                <th scope="row">Username</th>
+                <th scope="row">Password</th>
+                <th scope="row">Email</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="employees.length > 0; else elseBlock4">
+            <tr *ngFor="let employee of employees" [class.selected]="employee === editEmployee">
+                <td>{{employee.empNo}}</td>
+                <td>{{employee.userName}}</td>
+                <td>{{employee.password}}</td>
+                <td>{{employee.email}}</td>
+                <td><i (click)="edit(employee)" class="glyphicon glyphicon-edit pointer" title="Edit"></i> </td>
+                <td><i (click)="delete(employee)"  class="glyphicon glyphicon-trash pointer" title="Delete"></i></td>
+            </tr>
+        </tbody>
+
+        <ng-template #elseBlock4>
+            <h1> Employee Data is empty {{employees.message}} </h1>
+
+        </ng-template>
+    </table>
+</div>
+    <h1> Please click this link to <button class="btn btn-primary" (click)="addEmployee()">Add Employees</button></h1><br/>
+
+    <app-add-employee *ngIf="showAddEmp" (messageEvent)="receiveMessage($event)"></app-add-employee>
+    <app-edit-employee *ngIf="editEmployeeFlag" [employee]="editEmployee"></app-edit-employee>
+
+</div>
+<app-footer></app-footer>
